@@ -1,43 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'screens/search_screen.dart';
+
+// هنا هننادي على الملفات من جوه الفولدر الجديد بتاعك
+// استبدلي 'screens' باسم الفولدر اللي إنتِ عملتيه
+import 'screens/role_selection_screen.dart';
+// بالاسم اللي إنتِ مسمياه بدون i
 
 void main() {
-  // Ensure framework is initialized and set system UI overlay style
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.dark,
-  ));
-
-  runApp(const ProfixApp());
+  runApp(const MyApp());
 }
 
-class ProfixApp extends StatelessWidget {
-  const ProfixApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Profix Service App',
+      title: 'ProFix',
       theme: ThemeData(
-        useMaterial3: true,
-        primaryColor: const Color(0xFF4A68FF),
-        scaffoldBackgroundColor: const Color(0xFFFAFAFA),
-        fontFamily: 'Roboto', // Default professional font
-        appBarTheme: const AppBarTheme(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          centerTitle: true,
-          titleTextStyle: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        primaryColor: const Color(0xFF3D5CFF),
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'Roboto',
       ),
-      home: const SearchScreen(),
+      // دي أول شاشة هتظهر لما تفتحي التطبيق
+      home: const RoleSelectionScreen(),
     );
   }
 }
